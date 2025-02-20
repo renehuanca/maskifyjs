@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maskify - Ejemplo</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <div class="mask-container" id="mask">
+        <h1>Welcome to Maskify!</h1>
+    </div>
+
+    <script src="src/maskify.js"></script>
+    <script>
+        // Crear una nueva instancia de Maskify
+        const mask = new Maskify("#mask", { color: "black", size: "20%" });
+    </script>
+</body>
+
+</html>
