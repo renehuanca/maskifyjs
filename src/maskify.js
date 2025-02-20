@@ -12,9 +12,14 @@ class Maskify {
             size: options.size || "10%",
             strength: options.strength || 5,
             color: options.color || "black",
-            fallbackColor: options.fallbackColor || "red",
+            fallbackColor: options.fallbackColor || "crimson",
         };
 
+        this.mask.style.width = '100vw';
+        this.mask.style.height = '100vh';
+        this.mask.style.position = 'absolute';
+        this.mask.style.top = 0;
+        this.mask.style.left = 0;
         this.mask.style.backgroundColor = this.settings.fallbackColor;
         this.handleMouseMove = this.handleMouseMove.bind(this);
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Lightweight JavaScript library for creating dynamic masking effects based on mouse movement.",
   "main": "dist/maskify.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },

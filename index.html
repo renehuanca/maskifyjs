@@ -6,16 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maskify - Ejemplo</title>
     <link rel="stylesheet" href="src/style.css">
+    <style>
+        #mask {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4em;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="mask-container" id="mask">
-        <h1>Welcome to Maskify!</h1>
+    <div id="mask">
+        <h1>IS GOOD!</h1>
     </div>
+
+    <main>
+        <!-- Your content here -->
+        <h1>MASKIFY!</h1>
+    </main>
 
     <script src="src/maskify.js"></script>
     <script>
-        // Crear una nueva instancia de Maskify
         const mask = new Maskify("#mask", { color: "black", size: "20%" });
     </script>
 </body>
