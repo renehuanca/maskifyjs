@@ -5,33 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maskify - Ejemplo</title>
+    <link rel="stylesheet" href="/dist/style.min.css">
     <style>
-        :root {
-            --mask-size: 32px;
-            --mask-x: 0px;
-            --mask-y: 0px;
-        }
-
-        #mask {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 1;
-            background-color: orangered;
-            mask-image: url('../../src/img/mask.svg');
-            mask-repeat: no-repeat;
-            mask-size: var(--mask-size), contain;
-            mask-origin: content-box;
-            mask-position: calc(var(--mask-x) - var(--mask-size)/2) calc(var(--mask-y) - var(--mask-size)/2), center;
-            -webkit-mask-image: url('../../src/img/mask.svg');
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-size: var(--mask-size), contain;
-            -webkit-mask-origin: content-box;
-            -webkit-mask-position: calc(var(--mask-x) - var(--mask-size)/2) calc(var(--mask-y) - var(--mask-size)/2), center;
-            min-height: 100%;
-            min-width: 100%;
-        }
-
         .mask-effect {
             font-size: 5em;
             color: white;
@@ -57,11 +32,9 @@
         <h1 class="text">MASKIFYJS</h1>
     </main>
 
-    <!-- Incluir el archivo JavaScript de Maskify -->
-    <script src="/dist/index.js"></script>
-
+    <script src="/dist/maskify.min.js"></script>
     <script>
-        new Maskifyjs('#mask');
+        new Maskify('#mask');
     </script>
 </body>
 

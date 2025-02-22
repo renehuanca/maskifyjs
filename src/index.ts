@@ -1,3 +1,5 @@
+import './style.css';
+
 interface MaskifyConfig {
     maxSize?: number;
     minSize?: number;
@@ -8,7 +10,7 @@ const MASKIFY_CONFIG: MaskifyConfig = {
     minSize: 32
 };
 
-class Maskifyjs {
+class Maskify {
     private mask: HTMLElement | null;
     private baseX: number;
     private baseY: number;
@@ -83,7 +85,7 @@ class Maskifyjs {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = Maskifyjs;
+    module.exports = Maskify;
 } else {
-    (window as any).Maskify = Maskifyjs;
+    (window as any).Maskify = Maskify;
 }
