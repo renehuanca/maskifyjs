@@ -27,6 +27,13 @@
             min-width: 100%;
         }
 
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(#183849, #060913) no-repeat;
+        }
+
         .mask-effect {
             font-size: 5em;
             color: white;
@@ -49,14 +56,20 @@
 
     <main>
         <!-- Your content here -->
-        <h1 class="text">MASKIFYJS</h1>
+        <h1 class="text">MASKIFY!</h1>
     </main>
 
     <!-- Incluir el archivo JavaScript de Maskify -->
     <script src="dist/index.js"></script>
 
     <script>
-        new Maskifyjs('#mask');
+        const maskElement = document.getElementById('mask');
+
+        new Maskify({
+            mask: maskElement,
+            maxSize: 360,
+            minSize: 0
+        });
     </script>
 </body>
 
