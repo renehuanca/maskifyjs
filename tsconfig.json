@@ -1,13 +1,14 @@
 {
     "compilerOptions": {
-        "target": "es6", // Compilar a ES6
-        "module": "es6", // Usar módulos ES6
-        "strict": false, // Desactivar modo estricto
-        "esModuleInterop": true, // Compatibilidad con módulos comunes
-        "declaration": true, // Generar archivos .d.ts para las definiciones de tipos
-        "outDir": "./dist", // Carpeta donde se guardarán los archivos compilados
-        "rootDir": "./src", // Carpeta de origen del código
-        "moduleResolution": "node" // Resolución de módulos al estilo Node.js
+        "target": "es6",
+        "module": "es6",
+        "strict": false,
+        "esModuleInterop": true,
+        "declaration": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "moduleResolution": "node",
+        "sourceMap": false
     },
     "include": [
         "src/**/*.ts"

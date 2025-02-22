@@ -1,24 +1,39 @@
-import { terser } from 'rollup-plugin-terser';
-import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "@rollup/plugin-typescript";
 
 export default {
     input: "src/index.ts",
+
     output: [
-        // Formato ESM
         {
-            file: "dist/maskify.mjs",
-            format: 'esm',
-            plugins: [terser()]  // Minificación para la versión ESM
-        },
-        // Formato CommonJS
-        {
-            file: "dist/maskify.min.js",
+            file: "dist/maskify.cjs.js", 
             format: 'cjs',
-            name: "maskify",  // Asegura que CommonJS tenga el nombre correcto
-            plugins: [terser()]  // Minificación para la versión CJS
+            sourcemap: true,
+            plugins: [terser()],
+        },
+        {
+            file: "dist/maskify.esm.js",
+            format: 'esm',
+            sourcemap: true,
+            plugins: [terser()],
+        },
+        {
+            file: "dist/maskify.min.js", 
+            format: 'umd',
+            name: "Maskify", 
+            plugins: [terser()]
         }
     ],
+    
     plugins: [
-        typescript() // Transpila el código TypeScript
-    ]
+        resolve(),
+        commonjs(),
+        typescript({
+            tsconfig: './tsconfig.json'
+        }),
+    ],
+
+    external: [],
 };
