@@ -13,13 +13,11 @@ export default {
         {
             file: "dist/maskify.cjs.js",
             format: 'cjs',
-            sourcemap: true,
             plugins: [terser()],
         },
         {
             file: "dist/maskify.esm.js",
             format: 'esm',
-            sourcemap: true,
             plugins: [terser()],
         },
         {
