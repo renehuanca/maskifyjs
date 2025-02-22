@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Lightweight JavaScript library for creating dynamic masking effects based on mouse movement.",
   "type": "module",
-  "main": "dist/maskify.js",
+  "main": "dist/maskify.min.js",
   "module": "dist/maskify.esm.js",
   "exports": {
     "import": "./dist/maskify.esm.js",
@@ -36,8 +36,5 @@
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.8.1"
-  },
-  "dependencies": {
-    "typescript": "^5.7.3"
   }
 }
