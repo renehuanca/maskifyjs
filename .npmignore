@@ -1,9 +1,8 @@
-# Ignorar archivos de desarrollo y de configuración
-.vscode/
-.idea/
-node_modules/
-*.log
+# Ignore everything by default
+*
 
-# Ignorar cualquier cosa que no sea relevante para npm
-src/
-rollup.config.js
+# Allow only necessary files
+!dist/            # Include compiled library
+!package.json     # Required for npm package
+!README.md        # Documentation
+!LICENSE          # License file
