@@ -7,10 +7,10 @@ class Maskify {
             return;
         }
 
-        // Default
+        // Default settings
         this.settings = {
-            size: options.size || "10%",
-            strength: options.strength || 5,
+            size: options.size || 100, // Tamaño fijo en píxeles
+            feathering: options.feathering || 100, // difuminado > 100
             color: options.color || "black",
             fallbackColor: options.fallbackColor || "crimson",
         };
@@ -27,8 +27,9 @@ class Maskify {
     }
 
     handleMouseMove(e) {
-        this.mask.style.maskImage = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, 
-        ${this.settings.color} ${this.settings.size}, transparent ${this.settings.strength}%)`;
+        const { size, feathering, color } = this.settings;
+        this.mask.style.maskImage = `radial-gradient(circle ${size}px at ${e.clientX}px ${e.clientY}px, 
+        ${color} ${size}px, transparent ${feathering}px)`;
         this.mask.style.webkitMaskImage = this.mask.style.maskImage;
     }
 
@@ -38,10 +39,8 @@ class Maskify {
 }
 
 // Export
-
 if (typeof module !== "undefined" && module.exports) {
     module.exports = Maskify;
 } else {
     window.Maskify = Maskify; // Browser
 }
-
