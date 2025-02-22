@@ -4,6 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from 'rollup-plugin-postcss';
 import cssnano from 'cssnano';
+import copy from 'rollup-plugin-copy';
 
 export default {
     input: "src/index.ts",
@@ -38,6 +39,11 @@ export default {
         postcss({
             extract: 'style.min.css',
             plugins: [cssnano()],
+        }),
+        copy({
+            targets: [
+                { src: 'src/assets/*.svg', dest: 'dist/assets' }
+            ]
         }),
     ],
 
